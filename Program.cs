@@ -21,7 +21,7 @@ void PrintArray(string[] arr)
         if (i < arr.Length - 1) Console.Write($"'{arr[i]}', ");
         else Console.Write($"'{arr[i]}'");
     }
-    Console.WriteLine("]");
+    Console.Write("]");
 }
 
 string[] CreateNewArr(string[] str, int mLength)
@@ -53,4 +53,5 @@ string[] array = Fillarr();
 int maxLength =3;
 string[] newArray = CreateNewArr(array, maxLength);
 PrintArray(array);
+Console.Write(" -> ");
 PrintArray(newArray);
