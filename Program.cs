@@ -13,7 +13,7 @@ string[] Fillarr()
     return str;
 }
 
-void PrintArray(string[] arr)  
+void PrintArray(string[] arr)
 {
     Console.Write("[");
     for (int i = 0; i < arr.Length; i++)
@@ -24,7 +24,33 @@ void PrintArray(string[] arr)
     Console.WriteLine("]");
 }
 
+string[] CreateNewArr(string[] str, int mLength)
+{
+    int count = 0;
+    for (int i = 0; i < str.Length; i++)
+    {
+        if (str[i].Length <= mLength) count++;
+    }
+   
+    string[] newStr = new string[count];
+    int j =0;
+    for (int i = 0; i < str.Length; i++)
+    {
+           if (str[i].Length <= mLength) 
+           {
+            newStr[j] = str[i];
+            j++;
+           }           
+    }
+    
+   
+    return newStr;
+}
 
 //программа
 
 string[] array = Fillarr();
+int maxLength =3;
+string[] newArray = CreateNewArr(array, maxLength);
+PrintArray(array);
+PrintArray(newArray);
