@@ -7,7 +7,7 @@
 
 string[] Fillarr()
 {
-    Console.WriteLine("Введеите эллементы массива в строку разделяя запятой и пробелом");
+    Console.WriteLine("Введеите элементы массива в строку разделяя запятой и пробелом");
     string stringElements = Console.ReadLine();
     string[] str = stringElements.Split(", ");
     return str;
@@ -27,30 +27,30 @@ void PrintArray(string[] arr)
 string[] CreateNewArr(string[] str, int mLength)
 {
     int count = 0;
+
     for (int i = 0; i < str.Length; i++)
     {
         if (str[i].Length <= mLength) count++;
     }
-   
+
     string[] newStr = new string[count];
-    int j =0;
+    int j = 0;
+
     for (int i = 0; i < str.Length; i++)
     {
-           if (str[i].Length <= mLength) 
-           {
+        if (str[i].Length <= mLength)
+        {
             newStr[j] = str[i];
             j++;
-           }           
-    }
-    
-   
-    return newStr;
+        }
+    }    
+return newStr;
 }
 
 //программа
 
 string[] array = Fillarr();
-int maxLength =3;
+int maxLength = 3;
 string[] newArray = CreateNewArr(array, maxLength);
 PrintArray(array);
 Console.Write(" -> ");
